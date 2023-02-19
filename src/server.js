@@ -10,7 +10,7 @@ const port = process.env.PORT || 8080;
 const hostname = process.env.HOST_NAME;
 // const __dirname = path.resolve();
 configViewEngine(app);
-app.use("/test", webRoutes);
+app.use("/", webRoutes);
 
 app.listen(port, hostname, () => {
   console.log(`Example app listening on port ${port}`);
