@@ -1,21 +1,17 @@
-import express from "express";
-import path from "path";
+const express = require("express");
+const path = require("path");
+const dotenv = require("dotenv").config();
+// import configViewEngine from "./config/viewEngine";
+const configViewEngine = require("./config/viewEngine");
+const webRoutes = require("./routes/web");
+
 const app = express();
-const port = 8080;
-const __dirname = path.resolve();
-// config template engine
-app.set("views", path.join(__dirname, "/src/views"));
-console.log(">>> check dirname", __dirname);
-// app.set("views", "./views/");
-app.set("view engine", "ejs");
+const port = process.env.PORT || 8080;
+const hostname = process.env.HOST_NAME;
+// const __dirname = path.resolve();
+configViewEngine(app);
+app.use("/test", webRoutes);
 
-app.get("/", (req, res) => {
-  res.send("Hello World! long tran");
-});
-app.get("/ejs", (req, res) => {
-  res.render("sample.ejs");
-});
-
-app.listen(port, () => {
+app.listen(port, hostname, () => {
   console.log(`Example app listening on port ${port}`);
 });
