@@ -10,17 +10,15 @@ const app = express();
 const port = process.env.PORT || 8080;
 const hostname = process.env.HOST_NAME;
 // const __dirname = path.resolve();
+
+app.use(express.json()); // Used to parse JSON bodies
+app.use(express.urlencoded({ extended: true })); //Parse URL-encoded bodies
+
 configViewEngine(app);
 app.use("/", webRoutes);
 
 // test connection db
 // get the client
-
-// simple query
-connection.query("SELECT * FROM Users ", function (err, results, fields) {
-  console.log("check results", results); // results contains rows returned by server
-  console.log("check fields", fields); // fields contains extra meta data about results, if available
-});
 
 app.listen(port, hostname, () => {
   console.log(`Example app listening on port ${port}`);
