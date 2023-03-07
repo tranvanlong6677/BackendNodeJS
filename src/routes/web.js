@@ -9,6 +9,6 @@ const {
 
 router.get("/", getHomePage);
 router.get("/ejs", getEjs);
-router.post("/create-user", createUser);
 router.get("/create", getCreateForm);
+router.post("/create-user", createUser);
 module.exports = router;
