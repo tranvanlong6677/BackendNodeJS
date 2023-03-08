@@ -25,10 +25,14 @@ const createUser = async (req, res) => {
   console.log(">>> check results", results);
   res.send("Create new user");
 };
+const updateUserPage = (req, res) => {
+  return res.render("edit.ejs");
+};
 
 module.exports = {
   getHomePage,
   getEjs,
   createUser,
   getCreateForm,
+  updateUserPage,
 };

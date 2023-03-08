@@ -28,8 +28,12 @@
           <td><%= listUsers[i].name %></td>
           <td><%= listUsers[i].city %></td>
           <td>
-            <button>Edit</button>
-            <button>Delete</button>
+            <button>
+              <a href="/update">Edit</a>
+            </button>
+            <button>
+              <a href="/delete">Delete</a>
+            </button>
           </td>
         </tr>
         <% } %>

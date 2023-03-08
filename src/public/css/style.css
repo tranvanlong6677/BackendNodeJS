@@ -27,7 +27,8 @@
   color: white;
 }
 
-.form-add-new {
+.form-add-new,
+.form-update {
   width: 500px;
   margin: 0 auto;
   padding-top: 100px;
